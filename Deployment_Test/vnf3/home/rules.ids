@@ -1,0 +1,2 @@
+#Signature: a1b2c3d4e5, Data_Time: 2024-02-27T15:00:00Z, IP_source: 192.168.1.1, Ip_dest: 192.168.1.2, port_source: 12345, port_dest: 80, payload: randomPayloadDataHere
+alert icmp any any <> any any (msg:"Chor Test"; sid:5000000;)

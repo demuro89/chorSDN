@@ -1,0 +1,6 @@
+# to eth1 a MAC address is assigned
+# different from the default one
+ip link set dev eth0 address 00:00:00:00:00:f3
+
+# to eth1 an IPv4 address is assigned
+ip address add 192.168.0.3/24 dev eth0

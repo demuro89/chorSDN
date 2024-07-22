@@ -1,0 +1,41 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+def libDir = file( "lib" )
+
+//configurations {
+//    core
+//    app.extendsFrom core
+//    testImplementation.extendsFrom app
+//}
+//
+dependencies {
+//    app "org.antlr:antlr4:4.9.2"
+//    app 'com.github.javaparser:javaparser-core:3.22.1'
+//    app 'info.picocli:picocli:4.6.1'
+//    core 'org.jolie-lang:jolie:1.10.4'
+//    core 'org.jolie-lang:libjolie:1.10.4'
+//    core 'org.jolie-lang:jolie-cli:1.10.4'
+    implementation 'com.esotericsoftware:kryo:5.3.0'
+    implementation 'io.github.classgraph:classgraph:4.8.140'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+//
+//sourceSets {
+//    core {
+//        java.srcDir 'src/core/java'
+//        compileClasspath += configurations.core
+//    }
+//    app {
+//        java.srcDir 'src/app/java'
+//        runtimeClasspath += compileClasspath += configurations.core + configurations.app + sourceSets.core.output
+//    }
+//    test {
+//        runtimeClasspath += compileClasspath += configurations.core + configurations.app + sourceSets.core.output + sourceSets.app.output
+//    }
+//}

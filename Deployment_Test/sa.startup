@@ -1,0 +1,21 @@
+# to eth0 a MAC address is assigned
+# different from the default one
+ip link set dev eth0 address 00:00:00:00:00:a1
+
+# to eth1 a MAC address is assigned
+# different from the default one
+ip link set dev eth1 address 00:00:00:00:00:b1
+
+# to eth0 an IPv4 address is assigned
+ip address add 172.16.0.254/24 dev eth0
+
+# to eth1 an IPv4 address is assigned
+ip address add 192.168.0.254/24 dev eth1
+
+
+# IPTables rule for traffic mirroring to all the VNF
+iptables -t mangle -A PREROUTING -i eth0 -j TEE --gateway 192.168.0.1
+
+iptables -t mangle -A PREROUTING -i eth0 -j TEE --gateway 192.168.0.2
+
+iptables -t mangle -A PREROUTING -i eth0 -j TEE --gateway 192.168.0.3
